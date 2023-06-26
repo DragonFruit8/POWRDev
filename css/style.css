@@ -21,6 +21,9 @@ h3,
 h4 {
   color: black;
 }
+.hero-content h1{
+  color: #fff;
+}
 
 p.lead {
   padding-top: 3rem;
@@ -40,25 +43,63 @@ button {
   padding: 10px 50px !important;
 }
 
-.heroSection {
+.hero {
+  position: relative;
+  height: 70vh;
+  background: url("../img/hero.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  background: url("../img/hero.jpg") no-repeat center center/cover;
-  height: 60vh;
-  /* z-index: ; */
-  /* color: #000; */
-  /* mix-blend-mode: ; */
 }
 
-#heroContent {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-height: fit-content;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-  max-width: 600px;
-  padding: 0 20px;
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  text-align: start;
+  color: #fff;
+}
+.hero-content p{
+  margin-top: 3rem;
+  line-height: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 4rem;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero-content .cta-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 30px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero-content .cta-btn:hover {
+  background-color: #f8f9fa;
 }
 
 #profilePic {
@@ -135,6 +176,12 @@ div#toTop {
   cursor: default;
   width: 100%;
 }
+#brand-img{
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  background-color: transparent;
+  border: none;}
 
 #brand-logo:hover {
   cursor: pointer;
@@ -149,6 +196,7 @@ nav.navbar {
   flex-direction: col;
   justify-content: space-between;
   background: rgba(0, 0, 0, 0.7);
+  z-index: 99;
 }
 
 /* Exclude sidebar !important */
@@ -210,24 +258,6 @@ a#resume {
 
 #resumeButton {
   display: flex;
-}
-
-#overlay {
-  content: '';
-  position: absolute;
-  display: flex;
-  flex: 1 1 0;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 70vh;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-#overlay-text {
-  position: relative;
-  z-index: 2;
-  color: #fff;
 }
 
 a#canvasButton {
@@ -332,15 +362,34 @@ a#canvasButton:hover {
   border: none;
 }
 
-#footer {
-  background-color: #000;
-  display: flex !important;
-  text-align: center !important;
-  text-justify: center !important;
-  color: #fff;
-  padding: 1rem;
-  margin: 0;
-  border-radius: 0px 0px 15px 15px;
+.footer {
+  background-color: #000000;
+  margin: auto auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  padding: 30px 0;
+}
+.footer ul, .footer span{
+  margin: auto 1rem ;
+  min-width: 70vw;
+  max-width: 60%;
+}
+
+footer.footer p {
+  font-size: 14px;
+  color: #dfdfdf;
+  padding-top: .7rem;
+  padding-bottom: .7rem;
+}
+
+.footer a {
+  color: #666;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 #icon-holder {
@@ -400,7 +449,7 @@ span.active {
 
 .sidebar {
   position: fixed;
-  top: 95.33px;
+  top: 0px;
   right: -300px;
   height: 100vh;
   width: 300px;
@@ -419,7 +468,7 @@ span.active {
 }
 
 .sidebar.show {
-  top: 95.33px;
+  top: 0px;
   color: #ffffff !important;
   bottom: 0;
   right: 0;
@@ -429,10 +478,32 @@ span.active {
 .sidebar .nav-link {
   color: #ffffff !important;
 }
+#sidebarCollapse > .navbar-nav{
+  display: inline-flex;
+  flex-direction: column;
+}
+a#closeBtn {
+  color: white !important;
+  margin-left: 1.4rem;
+  filter: invert(1);
+  transform: rotate(-90deg) scale(1);
+  transition: 500ms all ease-in-out;
+}
+a#closeBtn:hover{
+  transform: rotate(180deg) scale(1.5);
+  transition: 500ms all ease-in-out !important;
+}
+/* #closeBtn:focus{
+  color: hsl(0, 100%, 50%) !important;
+  transition: 500ms all ease-in-out!important;
+} */
+.offcanvas{
+  background-color: #046dd4;
+}
 
 /* Custom styles for the logo */
 .navbar-brand img {
-  height: 40px;
+  height: 300px;
   width: auto;
   margin-right: 10px;
 }
@@ -457,13 +528,13 @@ span.active {
 
 /* BIO Section */
 
-.header {
+.bio {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.header > img {
+.bio > img {
   width: 150px;
   height: auto;
   margin-right: 20px;
@@ -507,6 +578,10 @@ span.active {
   #brand-logo {
     width: 80%;
   }
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   .news-input {
     width: 40%;
@@ -518,7 +593,13 @@ span.active {
   #brand-logo {
     width: 50%;
   }
-
+  nav.navbar {
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+  .footer {
+    flex-wrap: wrap;
+  }
   .news-input {
     width: 50%;
   }
@@ -528,9 +609,32 @@ span.active {
   #overlay {
     height: 68vh;
   }
-
+  /* Navigation width */
+  nav.navbar {
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+  .footer ul{
+    margin: 1rem auto;
+  }
   #brand-logo {
-    width: 60%;
+    width: 40%;
+  }
+  .bio > .social {
+    width: 75px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+  #brand-img > img{
+    width: 50%;
+  }
+  .social img {
+    width: 50px;
+    height: auto;
+    padding: 10px;
+    transform: scale(1);
+    transition: .5s all ease-in-out;
   }
 
   .news-input {
@@ -542,9 +646,37 @@ span.active {
   #overlay {
     height: 69vh;
   }
+  .hero-content {
+    left: 50%;
+    min-width: 10rem;
+    transform: translate(-90%, -50%);
+  }
+  .hero-content{
+    /* width to border */
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    min-width: 60vw;
+    transform: translate(-50%, -50%);
+  }
+  .footer ul{
+    margin: 1rem auto;
+    flex-wrap: wrap;
+  }
+  .bio {
+    flex-direction: column;
+    align-items: center;
+  }
+  .bio > .social {
+    width: 75px;
+    flex-wrap: nowrap;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
 
   #brand-logo {
-    width: 90%;
+    width: 40%;
   }
 
   .news-input {
