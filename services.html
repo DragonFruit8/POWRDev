@@ -13,7 +13,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+  <style>
+    footer{
+      background-color: white !important;
+    }
+    .footer p, .footer a{
+      color: black !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -76,39 +84,96 @@
     </ul>
   </div>
 
-  <!-- Services -->
-  <div class="container">
+  <div class="container text-white">
     <h1>Our Services</h1>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="card-body">
-            <h5 class="card-title">Website Development</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-            </p>
-          </div>
+
+    <div class="row h-100 justify-content-evenly">
+      <div class="col-md-4 m-4">
+        <div class="service-card">
+          <img src="https://source.unsplash.com/random/400x300/?computer" class="card-img-top my-3 rounded"
+              alt="Website Development">
+          <h2 class="text-white my-3">Website Development</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius tincidunt metus, ac posuere odio
+            pellentesque at.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="card-body">
-            <h5 class="card-title">Notary Public</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-            </p>
-          </div>
+      <div class="col-md-4 m-4">
+        <div class="service-card">
+          <img src="https://source.unsplash.com/random/400x300/?dj-events" class="card-img-top my-3 rounded" alt="DJ Events">
+          <h2 class="text-white my-3">DJ Events</h2 >
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius tincidunt metus, ac posuere odio
+            pellentesque at.</p>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#audioModal">
+              Listen Now
+            </button>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card mb-4">
-          <div class="card-body">
-            <h5 class="card-title">Smart Home Installation</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-            </p>
+      <div class="col-md-4 m-4">
+        <div class="service-card">
+          <img src="https://source.unsplash.com/random/400x300/?ai" class="card-img-top my-3 rounded"
+              alt="Entertainment/Smart Home Setup">
+          <h2 class="text-white my-3">Entertainment/Smart Home Setup</h2 >
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius tincidunt metus, ac posuere odio
+            pellentesque at.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+      <div class="col-md-4 m-4">
+        <div class="service-card">
+          <img src="https://source.unsplash.com/random/400x300/?legal-documents" class="card-img-top my-3 rounded"
+              alt="Notary Public Services">
+          <h2 class="text-white my-3">Notary Public Services</h2 >
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus varius tincidunt metus, ac posuere odio
+            pellentesque at.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="modal fade" id="audioModal" tabindex="-1" aria-labelledby="audioModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="audioModalLabel">Audio Player</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <audio controls>
+              <source src="./audio/Chill_Bday.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 row-sm-6 w-100 text-center my-auto">
+          <p class="my-auto">&copy; 2023 POWR Design. All rights reserved.</p>
+        </div>
+        <div class="col-md-12 row-sm-12 text-md-end text-sm-center justify-content-between mx-auto">
+          <ul class="d-flex h-auto align-baseline align-center d-sm-flex flex-sm-wrap justify-content-sm-evenly gap-sm-2">
+            <a class="nav-link" href="./index.html">Home</a>
+            <a class="nav-link" href="./services.html">Services</a>
+            <a class="nav-link" href="./about.html">About</a>
+            <a class="nav-link" href="./contact.html">Contact</a>
+            <!-- <a class="nav-link" data-bs-toggle="modal" data-bs-target="#downloadModal" download>Resume</a> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
